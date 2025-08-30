@@ -8,14 +8,14 @@
   --foreground: hsl(220, 15%, 85%);
   --card: hsl(270, 30%, 8%);
   --card-foreground: hsl(220, 15%, 90%);
-  --primary: hsl(260, 60%, 65%);
-  --primary-foreground: hsl(230, 35%, 7%);
+  --primary: hsl(320, 100%, 45%);
+  --primary-foreground: hsl(0, 0%, 100%);
   --secondary: hsl(45, 90%, 60%);
   --secondary-foreground: hsl(230, 35%, 7%);
   --muted: hsl(230, 20%, 15%);
   --muted-foreground: hsl(220, 15%, 70%);
-  --accent: hsl(280, 70%, 70%);
-  --accent-foreground: hsl(230, 35%, 7%);
+  --accent: hsl(320, 100%, 45%);
+  --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 70%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
   --border: hsl(230, 25%, 20%);
@@ -82,8 +82,9 @@
 
   .celestial-bg {
     background: radial-gradient(circle at 20% 50%, rgba(75, 0, 130, 0.2) 0%, transparent 50%),
-               radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+               radial-gradient(circle at 80% 20%, rgba(230, 0, 119, 0.15) 0%, transparent 50%),
                radial-gradient(circle at 40% 80%, rgba(72, 61, 139, 0.2) 0%, transparent 50%),
+               radial-gradient(circle at 60% 30%, rgba(230, 0, 119, 0.1) 0%, transparent 60%),
                linear-gradient(135deg, var(--background) 0%, hsl(270, 50%, 8%) 100%);
     min-height: 100vh;
     position: relative;
@@ -91,14 +92,14 @@
   }
 
   .glass-card {
-    background: rgba(138, 43, 226, 0.08);
+    background: rgba(9, 9, 11, 0.421);
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(138, 43, 226, 0.2);
+    border: 1px solid rgba(100, 80, 150, 0.2);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   }
 
   .glass-input {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(29, 29, 29, 0.376);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     transition: all 0.3s ease;
@@ -132,13 +133,13 @@
   }
 
   .data-card {
-    background: linear-gradient(135deg, rgba(138, 43, 226, 0.12) 0%, rgba(75, 0, 130, 0.08) 100%);
-    border: 1px solid rgba(138, 43, 226, 0.15);
+    background: linear-gradient(135deg, rgba(39, 36, 36, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+    border: 1px solid rgba(255, 209, 60, 0.389);
     transition: all 0.3s ease;
   }
 
   .data-card:hover {
-    background: linear-gradient(135deg, rgba(138, 43, 226, 0.18) 0%, rgba(75, 0, 130, 0.12) 100%);
+    background: linear-gradient(135deg, rgba(44, 19, 36, 0.8) 0%, rgba(25, 25, 26, 0.6) 100%);
     transform: translateY(-2px);
   }
 
