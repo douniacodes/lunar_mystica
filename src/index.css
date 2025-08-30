@@ -82,9 +82,9 @@
 
   .celestial-bg {
     background: radial-gradient(circle at 20% 50%, rgba(36, 0, 62, 0.2) 0%, transparent 50%),
-               radial-gradient(circle at 80% 20%, rgba(230, 169, 0, 0.15) 0%, transparent 50%),
+               radial-gradient(circle at 80% 20%, rgba(33, 33, 33, 0.15) 0%, transparent 50%),
                radial-gradient(circle at 40% 80%, rgba(21, 17, 49, 0.2) 0%, transparent 50%),
-               radial-gradient(circle at 60% 30%, rgba(230, 0, 127, 0.1) 0%, transparent 60%),
+               radial-gradient(circle at 60% 30%, rgba(230, 0, 127, 0.106) 0%, transparent 60%),
                linear-gradient(135deg, var(--background) 0%, hsl(270, 50%, 8%) 100%);
     min-height: 100vh;
     position: relative;
