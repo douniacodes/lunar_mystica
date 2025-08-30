@@ -52,7 +52,7 @@ export function UpcomingEvents({ moonData }: UpcomingEventsProps) {
   return (
     <div className="glass-card rounded-2xl p-6 mb-8" data-testid="card-upcoming-events">
       <h3 className="text-2xl font-serif font-semibold mb-6 flex items-center">
-        <i className="fas fa-calendar-alt text-accent mr-3"></i>
+        <i className="fas fa-calendar-alt text-primary-foreground mr-3"></i>
         Prochains Événements Lunaires
       </h3>
       

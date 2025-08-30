@@ -73,7 +73,7 @@ export function MoonDataDisplay({ moonData }: MoonDataDisplayProps) {
       {/* Location & Time Card */}
       <div className="data-card rounded-2xl p-6 backdrop-blur-sm md:col-span-2 lg:col-span-1" data-testid="card-location">
         <div className="text-center">
-          <i className="fas fa-map-marker-alt text-3xl text-primary mb-3"></i>
+          <i className="fas fa-map-marker-alt text-3xl text-primary-foreground mb-3"></i>
           <h3 className="text-lg font-serif font-semibold mb-3" data-testid="text-location-city">
             {moonData.location.city}
           </h3>

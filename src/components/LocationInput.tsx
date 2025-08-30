@@ -42,7 +42,7 @@ export function LocationInput({ onLocationSubmit, onCurrentLocation, loading, er
   return (
     <div className="glass-card rounded-2xl p-4 sm:p-8 mb-8 max-w-2xl mx-auto">
       <h2 className="text-xl sm:text-2xl font-serif font-semibold mb-4 sm:mb-6 text-center text-card-foreground">
-        <i className="fas fa-map-marker-alt text-primary mr-3"></i>
+        <i className="fas fa-map-marker-alt text-primary-foreground mr-3"></i>
         Découvrez Votre Position Lunaire
       </h2>
       
@@ -63,7 +63,7 @@ export function LocationInput({ onLocationSubmit, onCurrentLocation, loading, er
         <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
           <button 
             type="submit"
-            className="w-full sm:flex-1 bg-gradient-to-r from-white to-yellow-500 hover:from-yellow-500 hover:to-white text-black font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-sm sm:text-base"
+            className="w-full sm:flex-1 bg-gradient-to-r from-white to-yellow-600 hover:from-yellow-600 hover:to-white text-black font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-sm sm:text-base"
             data-testid="button-calculate"
             disabled={loading || geoLoading || !city.trim()}
           >
@@ -82,7 +82,7 @@ export function LocationInput({ onLocationSubmit, onCurrentLocation, loading, er
           
           <button 
             type="button"
-            className="w-full sm:flex-1 bg-gradient-to-r from-muted to-border hover:from-border hover:to-muted text-foreground font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
+            className="w-full sm:flex-1 bg-gradient-to-r from-muted to-border border-color: var(--primary) hover:from-border hover:to-muted text-foreground font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base border border-primary"
             data-testid="button-geolocation"
             onClick={handleCurrentLocation}
             disabled={loading || geoLoading}

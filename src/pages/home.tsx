@@ -82,7 +82,7 @@ export default function Home() {
             <div className="mb-8 text-center">
               <button 
                 onClick={resetData}
-                className="glass-card inline-flex items-center px-6 py-3 rounded-xl font-semibold text-foreground hover:bg-gradient-to-r hover:from-primary hover:to-accent hover:text-primary-foreground transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                className="glass-card inline-flex items-center px-6 py-3 rounded-xl font-semibold text-foreground hover:bg-gradient-to-r hover:from-primary hover:to-accent hover:text-accent-foreground transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
               >
                 <i className="fas fa-arrow-left mr-3 text-lg"></i>
                 <span>Nouvelle Recherche</span>

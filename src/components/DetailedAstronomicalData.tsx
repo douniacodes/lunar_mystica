@@ -29,7 +29,7 @@ export function DetailedAstronomicalData({ moonData }: DetailedAstronomicalDataP
       {/* Astronomical Parameters */}
       <div className="glass-card rounded-2xl p-6" data-testid="card-astronomical-data">
         <h3 className="text-2xl font-serif font-semibold mb-6 flex items-center">
-          <i className="fas fa-satellite text-primary mr-3"></i>
+          <i className="fas fa-satellite text-primary-foreground mr-3"></i>
           Données Astronomiques
         </h3>
         
@@ -70,7 +70,7 @@ export function DetailedAstronomicalData({ moonData }: DetailedAstronomicalDataP
       {/* Rise & Set Times */}
       <div className="glass-card rounded-2xl p-6" data-testid="card-moon-times">
         <h3 className="text-2xl font-serif font-semibold mb-6 flex items-center">
-          <i className="fas fa-clock text-accent mr-3"></i>
+          <i className="fas fa-clock text-primary-foreground mr-3"></i>
           Horaires Lunaires
         </h3>
         

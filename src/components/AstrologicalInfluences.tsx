@@ -14,10 +14,10 @@ export function AstrologicalInfluences({ moonData }: AstrologicalInfluencesProps
   );
   const influencedSigns = ZodiacCalculator.getInfluencedSigns(moonData.zodiacSign);
 
-  return (
+    return (
     <div className="glass-card rounded-2xl p-6" data-testid="card-astrological-influences">
       <h3 className="text-2xl font-serif font-semibold mb-6 flex items-center">
-        <i className="fas fa-stars text-secondary mr-3"></i>
+        <span className="text-secondary mr-3 text-2xl">✨</span>
         Influences Astrologiques Actuelles
       </h3>
       
@@ -29,7 +29,7 @@ export function AstrologicalInfluences({ moonData }: AstrologicalInfluencesProps
           <div className="space-y-3 text-card-foreground">
             {influences.map((influence, index) => (
               <p key={index} className="flex items-start" data-testid={`text-influence-${index}`}>
-                <i className="fas fa-chevron-right text-secondary mr-2 mt-1"></i>
+                <span className="text-secondary mr-2 mt-1">▶</span>
                 <span>{influence}</span>
               </p>
             ))}
