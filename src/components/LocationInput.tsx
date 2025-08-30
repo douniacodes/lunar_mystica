@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useGeolocation } from '../hooks/useGeolocation';
 
 interface LocationInputProps {
@@ -11,6 +11,7 @@ interface LocationInputProps {
 export function LocationInput({ onLocationSubmit, onCurrentLocation, loading, error }: LocationInputProps) {
   const [city, setCity] = useState('');
   const { location: geoLocation, loading: geoLoading, error: geoError, getCurrentLocation } = useGeolocation();
+  const hasCalledCallback = useRef(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,14 +24,24 @@ export function LocationInput({ onLocationSubmit, onCurrentLocation, loading, er
     await getCurrentLocation();
   };
 
-  // Pass geolocation result to parent
-  if (geoLocation && !geoLoading) {
-    onCurrentLocation(geoLocation);
-  }
+  // Pass geolocation result to parent only once
+  useEffect(() => {
+    if (geoLocation && !geoLoading && !hasCalledCallback.current) {
+      hasCalledCallback.current = true;
+      onCurrentLocation(geoLocation);
+    }
+  }, [geoLocation, geoLoading, onCurrentLocation]);
+
+  // Reset callback flag when component resets
+  useEffect(() => {
+    if (!geoLocation) {
+      hasCalledCallback.current = false;
+    }
+  }, [geoLocation]);
 
   return (
-    <div className="glass-card rounded-2xl p-8 mb-8 max-w-2xl mx-auto">
-      <h2 className="text-2xl font-serif font-semibold mb-6 text-center text-card-foreground">
+    <div className="glass-card rounded-2xl p-4 sm:p-8 mb-8 max-w-2xl mx-auto">
+      <h2 className="text-xl sm:text-2xl font-serif font-semibold mb-4 sm:mb-6 text-center text-card-foreground">
         <i className="fas fa-map-marker-alt text-primary mr-3"></i>
         Découvrez Votre Position Lunaire
       </h2>
@@ -49,10 +60,10 @@ export function LocationInput({ onLocationSubmit, onCurrentLocation, loading, er
           <i className="fas fa-search absolute right-4 top-1/2 transform -translate-y-1/2 text-muted-foreground"></i>
         </div>
         
-        <div className="flex space-x-4">
+        <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
           <button 
             type="submit"
-            className="flex-1 bg-gradient-to-r from-white to-yellow-500 hover:from-yellow-500 hover:to-white text-black font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            className="w-full sm:flex-1 bg-gradient-to-r from-white to-yellow-500 hover:from-yellow-500 hover:to-white text-black font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-sm sm:text-base"
             data-testid="button-calculate"
             disabled={loading || geoLoading || !city.trim()}
           >
@@ -71,7 +82,7 @@ export function LocationInput({ onLocationSubmit, onCurrentLocation, loading, er
           
           <button 
             type="button"
-            className="flex-1 bg-gradient-to-r from-muted to-border hover:from-border hover:to-muted text-foreground font-semibold py-4 px-6 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full sm:flex-1 bg-gradient-to-r from-muted to-border hover:from-border hover:to-muted text-foreground font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
             data-testid="button-geolocation"
             onClick={handleCurrentLocation}
             disabled={loading || geoLoading}
