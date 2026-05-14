@@ -1,69 +1,60 @@
-# React + TypeScript + Vite
+# ![Lunar Mystica](./preview-lunarmystica.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Lunar Mystica
 
-Currently, two official plugins are available:
+Lunar Mystica est une application moderne développée avec **React**, **TypeScript** et **Vite**, conçue pour les passionnés d'astrologie et des cycles lunaires. Elle permet de calculer les influences astrologiques et de suivre les phases de la lune pour harmoniser son quotidien. Ce projet est inspiré de l'application "Moon" sur ios et a été amélioré. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Fonctionnalités
 
-## Expanding the ESLint configuration
+L'application s'appuie sur un moteur de calcul astrologique complet (`ZodiacCalculator`) offrant :
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Calcul du Signe du Zodiaque :** Informations détaillées sur les 12 signes (élément, couleur, symbolique).
+- **Suivi des Phases Lunaires :** Analyse des 8 phases de la lune (de la Nouvelle Lune à la Lune Balsamique).
+- **Influences Astrologiques :** Conseils personnalisés basés sur la position de la lune dans les signes.
+- **Recommandations Quotidiennes :** Suggestions de rituels, méditations et actions à privilégier (ex: rituels de manifestation, libération émotionnelle).
+- **Signes Influencés :** Identification des signes partageant le même élément que la lune actuelle pour une analyse plus fine.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Technologies utilisées
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **React 18** - Bibliothèque UI.
+- **TypeScript** - Pour un typage robuste et une meilleure maintenabilité.
+- **Vite** - Pour un environnement de développement ultra-rapide.
+- **ESLint** - Configuration stricte pour la qualité du code.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Installation
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. **Cloner le projet**
+   ```bash
+   git clone "https://github.com/douniacodes/lunar_mystica"
+   cd lunar-mystica-app
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. **Installer les dépendances**
+   ```bash
+   npm install
+   ```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. **Lancer l'application en mode développement**
+   ```bash
+   npm run dev
+   ```
+
+4. **Builder pour la production**
+   ```bash
+   npm run build
+   ```
+
+## Structure du projet
+
+- `/src/services` : Contient la logique métier, notamment `zodiacCalculator.ts`.
+- `/src/types` : Définitions TypeScript pour les objets astronomiques.
+- `/src/components` : Composants UI de l'application.
+
+## Configuration de Qualité
+
+Le projet est configuré avec des règles de linting avancées (Type-aware linting) pour garantir la sécurité du typage et la qualité du code React.
+
+---
+
+Développé avec passion par Dounia Boukrim (@douniacodes)
+
