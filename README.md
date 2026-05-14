@@ -1,4 +1,4 @@
-# ![Lunar Mystica](./preview-lunarmystica.png)
+![Lunar Mystica](./public/preview-lunarmystica.png)
 
 # Lunar Mystica
 
